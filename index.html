@@ -4492,6 +4492,13 @@
                     // 获取用户的第一个账户
                     const accounts = await web3.eth.getAccounts();
                     const account = accounts[0];
+                    const balance = await web3.eth.getBalance(account);
+                    const b = parseFloat(web3.utils.fromWei(balance, 'ether'));
+                    const balanceE = document.getElementById('balance');
+                    balanceE.innerHTML = "<span>Your BNB balance: <strong>" + b.toFixed(4) + "</strong></span><span class=\"popo_connAddress__5mMFx\"> Connected address:" + account.substr(0, 4) + "..." + account.substr(-4) + "</span>";
+                
+                    const addressE = document.getElementById('address');
+                    addressE.innerText = "Your address: " + address;
 
                     console.log('Connected account:', account);
                 } catch (error) {
@@ -7834,11 +7841,11 @@
                         </div>
 
                         <div class="popo_contentBlock__Q2BuG">
-                          <div class="popo_balanceInfo__fUdkc">
+                          <div class="popo_balanceInfo__fUdkc" id="balance">
                             <span
-                              >Your BNB balance: <strong>0.0067</strong></span
-                            ><span class="popo_connAddress__5mMFx"
-                              >Connected address: 0x78B0...3516</span
+                              >Your BNB balance: <strong>--</strong></span
+                            ><span class="popo_connAddress__5mMFx" id="address"
+                              >Connected address: ...</span
                             >
                           </div>
                         </div>
@@ -8321,78 +8328,6 @@
                   users.
                 </p>
               </div>
-              <!-- <div class="advantages-module--leftContainer--dc802">
-                <div class="advantages-module--stack--8bba1">
-                  <div class="swiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div
-                          class="advantages-module--stackItem--5d34e advantages-module--darkBlue--440e1 advantages-module--multichain--27181"
-                        >
-                          <h4>Multichain Meme token</h4>
-                          <p>
-                            $FROP is a multichain token utilizing different
-                            blockchains. Popo is amassing an army to support his
-                            righteous cause and bring down his treacherous rival
-                            Pepe.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div
-                          class="advantages-module--stackItem--5d34e advantages-module--pink--b1143 advantages-module--staking--fafe8"
-                        >
-                          <h4>Staking and returns</h4>
-                          <p>
-                            Popo always takes care of his own. The War Chest has
-                            been created to allow the members of The Popo Army
-                            to make a generous return on their investments and
-                            contributions.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div
-                          class="advantages-module--stackItem--5d34e advantages-module--orange--fc926 advantages-module--gaming--15385"
-                        >
-                          <h4>Community-backed project</h4>
-                          <p>
-                            Popo aspires to be the peoples champion, he listens
-                            to and acts on the desires of the community. By
-                            making all important decisions together, members
-                            will be further unified towards a common cause while
-                            taking an active role in the project&#x27;s
-                            direction.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div
-                          class="advantages-module--stackItem--5d34e advantages-module--blue--fc1e8 advantages-module--community--51377"
-                        >
-                          <h4>Pepe’s Boogeyman</h4>
-                          <p>
-                            Although Pepe’s success made him think he’s
-                            untouchable, backed by a strong community Popo is
-                            gunning for his long-time rival and will usurp his
-                            status as a meme icon, to leave Pepe alone and
-                            forgotten, a relic of memes past.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="advantages-module--buttonContainer--0d9a4">
-                  <button
-                    class="prevCard advantages-module--prevButton--01d76"
-                  ></button
-                  ><button
-                    class="nextCard advantages-module--nextButton--12806"
-                  ></button>
-                </div>
-              </div> -->
-              <!-- <div class="advantages-module--rightContainer--f9ff3">
                 <div
                   data-gatsby-image-wrapper=""
                   class="gatsby-image-wrapper gatsby-image-wrapper-constrained advantages-module--image--30541"
