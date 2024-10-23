@@ -4497,10 +4497,14 @@
 
           function updateTimer() {
             // Calculate minutes and seconds
+            const days = Math.floor(countdownTime / 24 / 3600);
+            const hours = Math.floor(countdownTime / 3600);
             const minutes = Math.floor(countdownTime / 60);
             const seconds = countdownTime % 60;
 
             // Update the HTML elements
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
             document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 
@@ -7880,16 +7884,16 @@
                             <div class="popo_contentBlock__Q2BuG">
                               <div class="popo_presaleTimer__HEqRk">
                                 <div class="popo_timerChunk__6qI6E">
-                                  <div><span class="tDate" id="days">00</span></div><span>Days</span>
+                                  <div><span class="tDate" id="days">XX</span></div><span>Days</span>
                                 </div>
                                 <div class="popo_timerChunk__6qI6E">
-                                  <div><span class="tDate" id="hours">00</span></div><span>Hours</span>
+                                  <div><span class="tDate" id="hours">XX</span></div><span>Hours</span>
                                 </div>
                                 <div class="popo_timerChunk__6qI6E">
-                                  <div><span class="tDate" id="minutes">00</span></div><span>Minutes</span>
+                                  <div><span class="tDate" id="minutes">XX</span></div><span>Minutes</span>
                                 </div>
                                 <div class="popo_timerChunk__6qI6E">
-                                  <div><span class="tDate" id="seconds">00</span></div><span>Seconds</span>
+                                  <div><span class="tDate" id="seconds">XX</span></div><span>Seconds</span>
                                 </div>
                               </div>
                             </div>
