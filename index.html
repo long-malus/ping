@@ -4489,6 +4489,17 @@
                     // 创建Web3实例
                     const web3 = new Web3(window.ethereum);
 
+                    const chainId = '0x61'; // BSC Testnet chain ID
+                    const currentChainId = await window.ethereum.request({ method: 'eth_chainId' });
+
+                    if (currentChainId !== chainId) {
+                        // Switch to BSC Testnet
+                        await window.ethereum.request({
+                            method: 'wallet_switchEthereumChain',
+                            params: [{ chainId: chainId }],
+                        });
+                    }
+
                     // 获取用户的第一个账户
                     const accounts = await web3.eth.getAccounts();
                     const account = accounts[0];
