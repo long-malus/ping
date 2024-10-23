@@ -4481,7 +4481,19 @@
   <body>
     <script>
          // Initialize the countdown time in seconds
-          let countdownTime = 1980; // Example: 33 minutes (1980 seconds)
+            function initializeCountdown() {
+                // Check if countdownTime is already stored in localStorage
+                let storedTime = localStorage.getItem('countdownTime');
+
+                if (storedTime !== null) {
+                  // Parse the stored time
+                  countdownTime = parseInt(storedTime, 10);
+                } else {
+                  // Initialize countdownTime if not stored
+                  countdownTime = 1980; // Example: 33 minutes (1980 seconds)
+                  localStorage.setItem('countdownTime', countdownTime);
+                }
+              }
 
           function updateTimer() {
             // Calculate minutes and seconds
@@ -4495,6 +4507,7 @@
             // Decrease the countdown time
             if (countdownTime > 0) {
               countdownTime--;
+              localStorage.setItem('countdownTime', countdownTime);
             } else {
               clearInterval(timerInterval);
             }
@@ -4505,6 +4518,8 @@
             if (window.ethereum) {
                 try {
                    // Update the timer every second
+                    initializeCountdown();
+
                     const timerInterval = setInterval(updateTimer, 1000);
                     await window.ethereum.request({ method: 'eth_requestAccounts' });
 
@@ -7868,13 +7883,13 @@
                                   <div><span class="tDate" id="days">00</span></div><span>Days</span>
                                 </div>
                                 <div class="popo_timerChunk__6qI6E">
-                                  <div><span class="tDate" id="hours">03</span></div><span>Hours</span>
+                                  <div><span class="tDate" id="hours">00</span></div><span>Hours</span>
                                 </div>
                                 <div class="popo_timerChunk__6qI6E">
-                                  <div><span class="tDate" id="minutes">18</span></div><span>Minutes</span>
+                                  <div><span class="tDate" id="minutes">00</span></div><span>Minutes</span>
                                 </div>
                                 <div class="popo_timerChunk__6qI6E">
-                                  <div><span class="tDate" id="seconds">45</span></div><span>Seconds</span>
+                                  <div><span class="tDate" id="seconds">00</span></div><span>Seconds</span>
                                 </div>
                               </div>
                             </div>
