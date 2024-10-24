@@ -4498,8 +4498,8 @@
           function updateTimer() {
             // Calculate minutes and seconds
             const days = Math.floor(countdownTime / 24 / 3600);
-            const hours = Math.floor(countdownTime / 3600);
-            const minutes = Math.floor(countdownTime / 60);
+            const hours = Math.floor(countdownTime % (24 * 3600) / 3600);
+            const minutes = Math.floor(countdownTime % (3600) / 60);
             const seconds = countdownTime % 60;
 
             // Update the HTML elements
